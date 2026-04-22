@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import ScrollReveal from "./components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Porta-Kamp — Modular & Prefabricated Structures Since 1955",
+  title: "Porta-Kamp",
   description:
     "70 years pioneering modular and prefabricated structures worldwide. From drill camps to permanent complexes — we build where others won't.",
 };
