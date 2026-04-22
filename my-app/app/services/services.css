@@ -1,0 +1,261 @@
+/* SERVICES PAGE */
+.services-hero {
+  padding: 10rem 4rem 6rem;
+  background: var(--dark);
+  position: relative; overflow: hidden;
+  min-height: 72vh;
+  display: flex; align-items: flex-end;
+}
+.hero-glow2 {
+  position: absolute; bottom: -10%; right: 10%;
+  width: 500px; height: 400px;
+  background: radial-gradient(ellipse, rgba(200,185,154,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-inner {
+  position: relative; z-index: 2; width: 100%;
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 4rem; align-items: flex-end;
+}
+.hero-right { animation: fadeUp 0.8s 0.3s ease both; }
+.hero-tagline {
+  font-size: 1.05rem; font-weight: 300;
+  color: rgba(255,255,255,0.65); line-height: 1.85;
+  margin-bottom: 2rem; max-width: 460px;
+}
+.hero-pill-row { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+.hero-pill {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em;
+  text-transform: uppercase; padding: 0.4rem 0.9rem;
+  border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5);
+  transition: border-color 0.2s, color 0.2s;
+}
+.hero-pill:hover { border-color: var(--accent); color: var(--accent); }
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3rem; font-weight: 900; text-transform: uppercase;
+  line-height: 0.95; color: var(--white);
+}
+
+/* BUILDING SOLUTIONS */
+.solutions-section { background: var(--charcoal); padding: 6rem 4rem; }
+.solutions-header {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: flex-start; margin-bottom: 4rem;
+}
+.solutions-intro {
+  font-size: 0.95rem; font-weight: 300;
+  color: rgba(255,255,255,0.55); line-height: 1.85;
+  max-width: 400px; margin-top: 1.5rem;
+}
+.solutions-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px; background: rgba(255,255,255,0.06);
+}
+.sol-card {
+  background: var(--panel); padding: 2.2rem 1.8rem;
+  position: relative; overflow: hidden; cursor: pointer;
+  transition: background 0.3s; min-height: 180px;
+  display: flex; flex-direction: column; justify-content: space-between;
+}
+.sol-card:hover { background: #242b3d; }
+.sol-card::after {
+  content: ''; position: absolute; bottom: 0; left: 0; right: 100%;
+  height: 3px; background: var(--accent); transition: right 0.35s ease;
+}
+.sol-card:hover::after { right: 0; }
+.sol-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em;
+  color: var(--accent); margin-bottom: 1.5rem;
+}
+.sol-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.15rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--white); line-height: 1.2; flex: 1;
+}
+.sol-desc {
+  font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.4);
+  margin-top: 0.6rem; line-height: 1.6;
+}
+.sol-arrow {
+  font-size: 1.2rem; color: rgba(255,255,255,0.2);
+  margin-top: 1.5rem; transition: color 0.2s, transform 0.2s; align-self: flex-end;
+}
+.sol-card:hover .sol-arrow { color: var(--accent); transform: translate(4px, -4px); }
+
+/* EXPANDED SERVICES */
+.expanded-section { background: var(--cream); color: var(--charcoal); padding: 6rem 4rem; }
+.expanded-section .section-label { color: var(--accent); }
+.expanded-section .section-title { color: var(--charcoal); }
+.expanded-layout {
+  display: grid; grid-template-columns: 1fr 1.6fr;
+  gap: 5rem; margin-top: 3.5rem; align-items: start;
+}
+.expanded-left { position: sticky; top: 5rem; }
+.expanded-desc {
+  font-size: 0.95rem; font-weight: 300;
+  color: rgba(26,31,46,0.65); line-height: 1.85; margin-top: 1.5rem;
+}
+.exp-highlight {
+  margin-top: 2rem; padding: 1.5rem; background: var(--charcoal); color: var(--cream);
+}
+.exp-highlight-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.25em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem;
+}
+.exp-highlight-val {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 2.5rem; font-weight: 900; color: var(--white); line-height: 1;
+}
+.exp-highlight-sub { font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.45); margin-top: 0.3rem; }
+.expanded-right { display: flex; flex-direction: column; gap: 1.5px; background: rgba(26,31,46,0.08); }
+.exp-row {
+  background: var(--white); padding: 1.4rem 1.8rem;
+  display: flex; align-items: center; gap: 1.2rem;
+  cursor: pointer; transition: background 0.25s; position: relative; overflow: hidden;
+}
+.exp-row:hover { background: #faf6ef; }
+.exp-row::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+  background: var(--accent); transition: width 0.3s ease;
+}
+.exp-row:hover::before { width: 3px; }
+.exp-row-icon {
+  width: 2.5rem; height: 2.5rem; flex-shrink: 0;
+  background: rgba(232,117,26,0.1);
+  display: flex; align-items: center; justify-content: center;
+}
+.exp-row-icon svg { width: 16px; height: 16px; stroke: var(--accent); fill: none; stroke-width: 1.5; stroke-linecap: round; }
+.exp-row-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.05rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--charcoal); flex: 1;
+}
+.exp-row-sub { font-size: 0.8rem; font-weight: 300; color: rgba(26,31,46,0.5); margin-top: 0.2rem; }
+.exp-row-chevron {
+  font-size: 0.9rem; color: rgba(26,31,46,0.25); transition: transform 0.2s, color 0.2s;
+}
+.exp-row:hover .exp-row-chevron { transform: translateX(4px); color: var(--accent); }
+
+/* STRATEGIC PARTNERSHIPS */
+.partnerships-section { background: var(--dark); padding: 6rem 4rem; position: relative; overflow: hidden; }
+.partnerships-bg {
+  position: absolute; top: 50%; right: -4rem; transform: translateY(-50%);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 16rem; font-weight: 900; text-transform: uppercase;
+  color: rgba(255,255,255,0.025); pointer-events: none; user-select: none; line-height: 1;
+}
+.partnerships-header {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: flex-start; margin-bottom: 4rem;
+}
+.partnerships-sub {
+  font-size: 0.95rem; font-weight: 300;
+  color: rgba(255,255,255,0.5); line-height: 1.85; margin-top: 1.5rem; max-width: 400px;
+}
+.partnerships-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.5px; background: rgba(255,255,255,0.05); position: relative; z-index: 1;
+}
+.partner-card {
+  background: var(--panel2); padding: 2rem 1.8rem;
+  position: relative; cursor: pointer; transition: background 0.3s;
+  display: flex; flex-direction: column; gap: 0.8rem;
+}
+.partner-card:hover { background: #1c2231; }
+.partner-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.2em; color: rgba(232,117,26,0.6);
+}
+.partner-line {
+  width: 1.8rem; height: 2px; background: rgba(255,255,255,0.12);
+  transition: background 0.3s, width 0.3s;
+}
+.partner-card:hover .partner-line { background: var(--accent); width: 3rem; }
+.partner-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.04em; color: var(--white); line-height: 1.2;
+}
+.partner-desc { font-size: 0.8rem; font-weight: 300; color: rgba(255,255,255,0.35); line-height: 1.6; }
+
+/* CTA STRIP */
+.cta-section {
+  background: var(--accent); padding: 5rem 4rem;
+  display: grid; grid-template-columns: 1fr auto;
+  gap: 4rem; align-items: center; position: relative; overflow: hidden;
+}
+.cta-bg-text {
+  position: absolute; right: -2rem; top: 50%; transform: translateY(-50%);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 12rem; font-weight: 900; text-transform: uppercase;
+  color: rgba(255,255,255,0.07); pointer-events: none; user-select: none; line-height: 1;
+}
+.cta-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.3em;
+  text-transform: uppercase; color: rgba(255,255,255,0.65); margin-bottom: 1rem;
+}
+.cta-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3.2rem; font-weight: 900; text-transform: uppercase;
+  color: white; line-height: 0.95; position: relative; z-index: 1;
+}
+.cta-body {
+  font-size: 0.95rem; font-weight: 300;
+  color: rgba(255,255,255,0.8); line-height: 1.75; margin-top: 1.2rem;
+  max-width: 500px; position: relative; z-index: 1;
+}
+.cta-right { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; }
+
+/* ===== SERVICES RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+  .services-hero { padding: 7rem 1.5rem 4rem; min-height: auto; }
+  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-tagline { font-size: 0.9rem; }
+  .section-title { font-size: 2.2rem; }
+
+  .solutions-section { padding: 4rem 1.5rem; }
+  .solutions-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .solutions-grid { grid-template-columns: 1fr 1fr; }
+
+  .expanded-section { padding: 4rem 1.5rem; }
+  .expanded-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+  .expanded-left { position: static; }
+  .exp-row { padding: 1.2rem 1rem; }
+  .exp-row-name { font-size: 0.9rem; }
+
+  .partnerships-section { padding: 4rem 1.5rem; }
+  .partnerships-header { grid-template-columns: 1fr; gap: 1.5rem; }
+  .partnerships-grid { grid-template-columns: 1fr 1fr; }
+  .partnerships-bg { font-size: 8rem; }
+
+  .cta-section {
+    grid-template-columns: 1fr;
+    padding: 3.5rem 1.5rem;
+    gap: 2rem;
+  }
+  .cta-title { font-size: 2.5rem; }
+  .cta-bg-text { font-size: 7rem; }
+}
+
+@media (max-width: 480px) {
+  .services-hero { padding: 6rem 1rem 3rem; }
+  .hero-pill { font-size: 0.65rem; padding: 0.3rem 0.7rem; }
+
+  .solutions-section { padding: 3rem 1rem; }
+  .solutions-grid { grid-template-columns: 1fr; }
+
+  .expanded-section { padding: 3rem 1rem; }
+  .exp-row-icon { display: none; }
+
+  .partnerships-section { padding: 3rem 1rem; }
+  .partnerships-grid { grid-template-columns: 1fr; }
+
+  .cta-section { padding: 2.5rem 1rem; }
+  .cta-title { font-size: 2rem; }
+}
