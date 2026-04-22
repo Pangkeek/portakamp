@@ -29,7 +29,8 @@ export default function Navbar() {
   return (
     <nav>
       <Link href="/" className="logo">
-        Porta<span>·</span>Kamp
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/Logo-3-nobg.png" alt="Porta-Kamp Houston" className="logo-img" />
       </Link>
 
       {/* Hamburger button */}

@@ -6,14 +6,20 @@ export default function Home() {
     <>
       {/* HERO */}
       <section className="hero">
-        <div className="hero-bg"></div>
-        <div className="home-hero-grid"></div>
+        <video
+          className="hero-video"
+          autoPlay
+          muted
+          loop
+          playsInline
+          src="/Intro_Video_Creation_For_Website.mp4"
+        />
+        <div className="hero-video-overlay"></div>
         <div className="hero-content">
           <p className="hero-eyebrow">Est. 1955 · Houston, TX</p>
           <h1 className="hero-title">
-            The Sun<br />
-            <em>Never Sets</em><br />
-            on Porta Kamp
+            PORTA-KAMP<br />
+            <em>HOUSTON</em>
           </h1>
           <p className="hero-sub">
             70 years pioneering modular and prefabricated structures worldwide.
@@ -143,7 +149,7 @@ export default function Home() {
             <h2 className="gallery-title">Project<br />Gallery</h2>
           </div>
           <Link href="/gallery">
-            <button className="btn-ghost" style={{ color: "rgba(255,255,255,0.7)" }}>
+            <button className="btn-ghost" style={{ color: "rgba(30,58,28,0.7)", borderColor: "rgba(30,58,28,0.25)" }}>
               View All Projects
             </button>
           </Link>

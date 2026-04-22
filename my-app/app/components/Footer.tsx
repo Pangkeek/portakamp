@@ -6,7 +6,8 @@ export default function Footer() {
       <div className="footer-top">
         <div>
           <div className="footer-logo">
-            Porta<span>·</span>Kamp
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/Logo-3-nobg.png" alt="Porta-Kamp Houston" className="footer-logo-img" />
           </div>
           <p className="footer-tagline">
             Modular and Prefabricated Structures since 1955. Building the
@@ -21,6 +22,8 @@ export default function Footer() {
             <li><Link href="/services">Services</Link></li>
             <li><Link href="/gallery">Gallery</Link></li>
             <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link href="/cookie-policy">Cookie Policy</Link></li>
           </ul>
         </div>
         <div>
@@ -75,8 +78,8 @@ export default function Footer() {
       <div className="footer-bottom">
         <span>© 2025–Present · Porta-Kamp Inc. All Rights Reserved</span>
         <div style={{ display: "flex", gap: "1.5rem" }}>
-          <a href="#" style={{ color: "inherit", textDecoration: "none" }}>Privacy Policy</a>
-          <a href="#" style={{ color: "inherit", textDecoration: "none" }}>Cookie Policy</a>
+          <Link href="/privacy-policy" style={{ color: "inherit", textDecoration: "none" }}>Privacy Policy</Link>
+          <Link href="/cookie-policy" style={{ color: "inherit", textDecoration: "none" }}>Cookie Policy</Link>
         </div>
       </div>
     </footer>

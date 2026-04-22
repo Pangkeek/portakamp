@@ -1,5 +1,6 @@
 import "./contact.css";
 import ContactForm from "./ContactForm";
+import Link from "next/link";
 
 export const metadata = {
   title: "Contact — Porta-Kamp",
@@ -46,32 +47,32 @@ export default function ContactPage() {
           <div className="map-box">
             <div className="map-inner">
               <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-                <rect width="400" height="200" fill="#1e2435" />
-                <line x1="0" y1="40" x2="400" y2="40" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-                <line x1="0" y1="80" x2="400" y2="80" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-                <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-                <line x1="0" y1="160" x2="400" y2="160" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-                <line x1="80" y1="0" x2="80" y2="200" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-                <line x1="160" y1="0" x2="160" y2="200" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-                <line x1="240" y1="0" x2="240" y2="200" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-                <line x1="320" y1="0" x2="320" y2="200" stroke="rgba(255,255,255,0.04)" strokeWidth="1" />
-                <path d="M0,105 Q100,100 200,105 Q300,110 400,105" stroke="rgba(255,255,255,0.12)" strokeWidth="3" fill="none" />
-                <path d="M0,140 L400,140" stroke="rgba(255,255,255,0.08)" strokeWidth="2" fill="none" />
-                <path d="M185,0 L195,200" stroke="rgba(255,255,255,0.1)" strokeWidth="2.5" fill="none" />
-                <path d="M130,0 L120,200" stroke="rgba(255,255,255,0.06)" strokeWidth="1.5" fill="none" />
-                <rect x="50" y="55" width="55" height="35" rx="2" fill="rgba(255,255,255,0.05)" />
-                <rect x="215" y="55" width="40" height="25" rx="2" fill="rgba(255,255,255,0.05)" />
-                <rect x="265" y="50" width="60" height="40" rx="2" fill="rgba(255,255,255,0.05)" />
-                <rect x="60" y="115" width="45" height="20" rx="2" fill="rgba(255,255,255,0.05)" />
-                <rect x="215" y="115" width="50" height="20" rx="2" fill="rgba(255,255,255,0.05)" />
-                <rect x="275" y="115" width="70" height="20" rx="2" fill="rgba(255,255,255,0.05)" />
-                <text x="200" y="98" textAnchor="middle" fill="rgba(255,255,255,0.25)" fontSize="7" fontFamily="DM Sans, sans-serif" letterSpacing="1">W. SAM HOUSTON PKWY N.</text>
-                <circle cx="200" cy="105" r="14" fill="rgba(232,160,32,0.15)">
+                <rect width="400" height="200" fill="#eae5da" />
+                <line x1="0" y1="40" x2="400" y2="40" stroke="rgba(30,58,28,0.06)" strokeWidth="1" />
+                <line x1="0" y1="80" x2="400" y2="80" stroke="rgba(30,58,28,0.06)" strokeWidth="1" />
+                <line x1="0" y1="120" x2="400" y2="120" stroke="rgba(30,58,28,0.06)" strokeWidth="1" />
+                <line x1="0" y1="160" x2="400" y2="160" stroke="rgba(30,58,28,0.06)" strokeWidth="1" />
+                <line x1="80" y1="0" x2="80" y2="200" stroke="rgba(30,58,28,0.06)" strokeWidth="1" />
+                <line x1="160" y1="0" x2="160" y2="200" stroke="rgba(30,58,28,0.06)" strokeWidth="1" />
+                <line x1="240" y1="0" x2="240" y2="200" stroke="rgba(30,58,28,0.06)" strokeWidth="1" />
+                <line x1="320" y1="0" x2="320" y2="200" stroke="rgba(30,58,28,0.06)" strokeWidth="1" />
+                <path d="M0,105 Q100,100 200,105 Q300,110 400,105" stroke="rgba(30,58,28,0.18)" strokeWidth="3" fill="none" />
+                <path d="M0,140 L400,140" stroke="rgba(30,58,28,0.12)" strokeWidth="2" fill="none" />
+                <path d="M185,0 L195,200" stroke="rgba(30,58,28,0.14)" strokeWidth="2.5" fill="none" />
+                <path d="M130,0 L120,200" stroke="rgba(30,58,28,0.08)" strokeWidth="1.5" fill="none" />
+                <rect x="50" y="55" width="55" height="35" rx="2" fill="rgba(30,58,28,0.07)" />
+                <rect x="215" y="55" width="40" height="25" rx="2" fill="rgba(30,58,28,0.07)" />
+                <rect x="265" y="50" width="60" height="40" rx="2" fill="rgba(30,58,28,0.07)" />
+                <rect x="60" y="115" width="45" height="20" rx="2" fill="rgba(30,58,28,0.07)" />
+                <rect x="215" y="115" width="50" height="20" rx="2" fill="rgba(30,58,28,0.07)" />
+                <rect x="275" y="115" width="70" height="20" rx="2" fill="rgba(30,58,28,0.07)" />
+                <text x="200" y="98" textAnchor="middle" fill="rgba(30,58,28,0.35)" fontSize="7" fontFamily="DM Sans, sans-serif" letterSpacing="1">W. SAM HOUSTON PKWY N.</text>
+                <circle cx="200" cy="105" r="14" fill="rgba(139,117,53,0.18)">
                   <animate attributeName="r" values="14;20;14" dur="2s" repeatCount="indefinite" />
                   <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
                 </circle>
-                <circle cx="200" cy="105" r="5" fill="#e8a020" />
-                <circle cx="200" cy="105" r="2.5" fill="#1a1f2e" />
+                <circle cx="200" cy="105" r="5" fill="#8B7535" />
+                <circle cx="200" cy="105" r="2.5" fill="#eae5da" />
               </svg>
             </div>
             <div className="map-overlay">1585 W. Sam Houston Pkwy N., Suite 120, Houston TX 77043</div>
@@ -97,9 +98,9 @@ export default function ContactPage() {
         <span className="contact-footer-logo">PORTA-KAMP</span>
         <span style={{ fontSize: "0.72rem", letterSpacing: "0.04em" }}>Modular &amp; Prefabricated Structures since 1955</span>
         <div className="contact-footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Cookie Policy</a>
-          <a href="#">© 2025 Porta-Kamp Inc.</a>
+          <Link href="/privacy-policy">Privacy Policy</Link>
+          <Link href="/cookie-policy">Cookie Policy</Link>
+          <span>© 2025 Porta-Kamp Inc.</span>
         </div>
       </div>
     </div>

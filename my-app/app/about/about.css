@@ -18,7 +18,7 @@
 .intro-body {
   font-size: 0.95rem;
   font-weight: 300;
-  color: rgba(26,31,46,0.7);
+  color: rgba(30,58,28,0.7);
   line-height: 1.8;
   margin-bottom: 1.2rem;
 }
@@ -62,22 +62,22 @@
 }
 
 /* CAPABILITIES */
-.capabilities-section { background: var(--charcoal); padding: 6rem 4rem; }
+.capabilities-section { background: var(--white); padding: 6rem 4rem; }
 .caps-header { margin-bottom: 3.5rem; }
 .caps-title {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 3rem; font-weight: 900; text-transform: uppercase;
-  color: var(--white); line-height: 0.95;
+  color: var(--charcoal); line-height: 0.95;
 }
 .caps-grid {
   display: grid; grid-template-columns: repeat(3, 1fr);
   gap: 1.5px; background: rgba(255,255,255,0.06);
 }
 .cap-card {
-  background: #1e2535; padding: 2.5rem 2rem;
+  background: var(--cream); padding: 2.5rem 2rem;
   position: relative; overflow: hidden; transition: background 0.3s;
 }
-.cap-card:hover { background: #242b3d; }
+.cap-card:hover { background: #ebe4d5; }
 .cap-bar {
   width: 2.5rem; height: 3px; background: var(--accent);
   margin-bottom: 1.5rem; transition: width 0.3s;
@@ -86,11 +86,11 @@
 .cap-title {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.3rem; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.05em; color: var(--white); margin-bottom: 0.8rem;
+  letter-spacing: 0.05em; color: var(--charcoal); margin-bottom: 0.8rem;
 }
 .cap-items {
   font-size: 0.82rem; font-weight: 300;
-  color: rgba(255,255,255,0.45); font-style: italic; line-height: 1.8;
+  color: rgba(30,58,28,0.65); font-style: italic; line-height: 1.8;
 }
 
 /* MISSION */
@@ -127,31 +127,31 @@
 }
 
 /* COMMITMENT */
-.commitment-section { background: var(--dark); padding: 6rem 4rem; }
+.commitment-section { background: var(--cream); padding: 6rem 4rem; }
 .commitment-header { margin-bottom: 3.5rem; }
 .commitment-title {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 3rem; font-weight: 900; text-transform: uppercase; color: var(--white);
+  font-size: 3rem; font-weight: 900; text-transform: uppercase; color: var(--charcoal);
 }
 .commitment-grid {
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 1.5px; background: rgba(255,255,255,0.06);
 }
 .commit-card {
-  background: #161b27; padding: 3rem 2rem;
+  background: var(--white); padding: 3rem 2rem;
   position: relative; overflow: hidden; transition: background 0.3s;
 }
-.commit-card:hover { background: #1c2231; }
+.commit-card:hover { background: #fdfaf5; }
 .commit-letter {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 5rem; font-weight: 900; color: rgba(232,117,26,0.12);
+  font-size: 5rem; font-weight: 900; color: rgba(139,117,53,0.12);
   line-height: 1; margin-bottom: 0.5rem; transition: color 0.3s;
 }
-.commit-card:hover .commit-letter { color: rgba(232,117,26,0.22); }
+.commit-card:hover .commit-letter { color: rgba(139,117,53,0.22); }
 .commit-name {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 1.5rem; font-weight: 900; text-transform: uppercase;
-  letter-spacing: 0.05em; color: var(--white); margin-bottom: 1rem;
+  letter-spacing: 0.05em; color: var(--charcoal); margin-bottom: 1rem;
 }
 .commit-name::after {
   content: ''; display: block; width: 2rem; height: 2px;
@@ -160,23 +160,23 @@
 .commit-card:hover .commit-name::after { width: 3.5rem; }
 .commit-desc {
   font-size: 0.85rem; font-weight: 300;
-  color: rgba(255,255,255,0.45); line-height: 1.75;
+  color: rgba(30,58,28,0.7); line-height: 1.75;
 }
 
 /* TIMELINE */
-.timeline-section { background: var(--charcoal); padding: 6rem 4rem; }
+.timeline-section { background: var(--white); padding: 6rem 4rem; }
 .timeline-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
 .timeline-title {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 3rem; font-weight: 900; text-transform: uppercase;
-  color: var(--white); line-height: 0.95;
+  color: var(--charcoal); line-height: 0.95;
 }
 .timeline-track {
   position: relative; display: grid; grid-template-columns: repeat(5, 1fr); gap: 0;
 }
 .timeline-line {
   position: absolute; top: 6.5rem; left: 5%; right: 5%;
-  height: 2px; background: rgba(255,255,255,0.1); z-index: 0;
+  height: 2px; background: rgba(30,58,28,0.1); z-index: 0;
 }
 .timeline-line-fill { height: 100%; background: var(--accent); width: 0%; transition: width 1.5s ease; }
 .timeline-item {
@@ -185,7 +185,7 @@
 }
 .tl-img-wrap {
   width: 100%; aspect-ratio: 4/3; overflow: hidden;
-  background: #2a3040; margin-bottom: 1.2rem; position: relative; transition: transform 0.3s;
+  background: #2a3d2a; margin-bottom: 1.2rem; position: relative; transition: transform 0.3s;
 }
 .timeline-item:hover .tl-img-wrap { transform: translateY(-4px); }
 .tl-img-wrap img {
@@ -195,7 +195,7 @@
 .timeline-item:hover .tl-img-wrap img { opacity: 0.95; }
 .tl-dot {
   width: 12px; height: 12px; border-radius: 50%;
-  background: var(--charcoal); border: 2px solid rgba(255,255,255,0.2);
+  background: var(--white); border: 2px solid rgba(30,58,28,0.2);
   margin-bottom: 0.8rem; transition: border-color 0.3s, background 0.3s;
 }
 .timeline-item:hover .tl-dot, .timeline-item.active .tl-dot {
@@ -206,7 +206,7 @@
   font-size: 1.5rem; font-weight: 900; color: var(--accent); margin-bottom: 0.3rem;
 }
 .tl-label {
-  font-size: 0.75rem; font-weight: 300; color: rgba(255,255,255,0.45);
+  font-size: 0.75rem; font-weight: 300; color: rgba(30,58,28,0.7);
   text-align: center; line-height: 1.5;
 }
 
@@ -219,7 +219,7 @@
 }
 .archive-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
 .archive-item {
-  aspect-ratio: 1; overflow: hidden; background: #2a3040;
+  aspect-ratio: 1; overflow: hidden; background: #2a3d2a;
   position: relative; cursor: pointer;
 }
 .archive-item img {
