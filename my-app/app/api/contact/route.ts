@@ -1,11 +1,16 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-// Initialize Resend with your API key from .env.local
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(req: Request) {
   try {
+    const apiKey = process.env.RESEND_API_KEY;
+    if (!apiKey) {
+      console.error('RESEND_API_KEY is not set in environment variables.');
+      return NextResponse.json({ error: 'Email service is not configured.' }, { status: 500 });
+    }
+
+    const resend = new Resend(apiKey);
+
     const { name, email, phone, org, message, activeTags } = await req.json();
 
     if (!name || !email) {
@@ -13,8 +18,6 @@ export async function POST(req: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      // The 'from' email must be a domain you have verified in Resend.
-      // Alternatively, for testing, you can use onboarding@resend.dev which can only send to your own registered email.
       from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
       to: process.env.CONTACT_EMAIL || 'info@portakamp.com',
       subject: `New Contact Form Submission from ${name}`,
@@ -38,6 +41,6 @@ export async function POST(req: Request) {
     return NextResponse.json({ success: true, data }, { status: 200 });
   } catch (error) {
     console.error('Error processing contact form:', error);
-    return NextResponse.json({ error: 'Failed to send message. Please check your Resend configuration.' }, { status: 500 });
+    return NextResponse.json({ error: 'Failed to send message.' }, { status: 500 });
   }
 }
