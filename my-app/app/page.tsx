@@ -155,13 +155,13 @@ export default function Home() {
         </div>
         <div className="gallery-grid reveal stagger-2">
           {[
-            { src: "/con1.jpg", label: "Container Camp" },
+            { src: "/con1.jpg", label: "Drilling Camps" },
             { src: "/res1.jpg", label: "Residential Compounds" },
             { src: "/mod1.jpg", label: "Modular Hospital" },
-            { src: "/drill1.jpg", label: "Drilling Camps" },
+            { src: "/con4.jpg", label: "Container Camp" },
             { src: "/op1.jpg", label: "Operational Bases" },
           ].map((item) => (
-            <div key={item.label} className="gallery-item">
+            <div key={item.src} className="gallery-item">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={item.src} alt={item.label} />
               <div className="gallery-item-overlay">
