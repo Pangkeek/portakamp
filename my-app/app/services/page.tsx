@@ -82,7 +82,7 @@ export default function ServicesPage() {
             <h2 className="section-title">Building<br />Solutions</h2>
           </div>
           <div>
-            <p className="solutions-intro">From remote drill camps to affordable housing and disaster relief — Porta-Kamp delivers a wide variety of building solutions for domestic and international clients across every terrain and climate.</p>
+            <p className="solutions-intro">From Exploration contruction camps and drilling bases of operations. Porta-kamp provides building solutions for projects worldwide building on seven decades of experience.</p>
           </div>
         </div>
         <div className="solutions-grid">

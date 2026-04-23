@@ -1,5 +1,6 @@
 import "./about.css";
 import AboutTimeline from "./AboutTimeline";
+import Link from "next/link";
 
 export const metadata = {
   title: "About — Porta-Kamp",
@@ -109,19 +110,19 @@ export default function AboutPage() {
         </div>
         <div className="archive-grid reveal stagger-2">
           {[
-            "03051328-Image-1-1.png", "03051328-2-Image-1-1.png", "03051328-1-Image-.png",
-            "03051327-Image.png", "03051327-1-Image.png", "03051327-2-Image-1.png", "03051327-3-Image-1.png",
+            "a1.png", "a2.png", "a3.png",
+            "a4.png", "a5.png", "a6.png", "a7.png",
           ].map((file, i) => (
             <div key={i} className="archive-item">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`https://portakamp.com/wp-content/uploads/2025/01/${file}`} alt={`Archive photo ${i + 1}`} />
+              <img src={`/${file}`} alt={`Archive photo ${i + 1}`} />
               <div className="archive-item-overlay"></div>
             </div>
           ))}
-          <div className="archive-item" style={{ background: "#1e2535", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: "0.5rem", cursor: "pointer" }}>
+          <Link href="/gallery?filter=archive" className="archive-item" style={{ background: "var(--charcoal)", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column", gap: "0.5rem", cursor: "pointer", textDecoration: "none" }}>
             <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "2rem", fontWeight: 900, color: "var(--accent)" }}>+</div>
-            <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "0.8rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(255,255,255,0.4)" }}>View All</div>
-          </div>
+            <div style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: "0.8rem", fontWeight: 600, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--sand)" }}>View All</div>
+          </Link>
         </div>
       </section>
     </>

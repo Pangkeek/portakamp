@@ -1,13 +1,14 @@
 "use client";
 import { useState, useCallback, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 
 const galleryItems = [
-  { src: "/con1.jpg", tag: "Container Camp 1", cat: "container" },
-  { src: "/con2.jpg", tag: "Container Camp 2", cat: "container" },
-  { src: "/con3.jpg", tag: "Container Camp 3", cat: "container" },
-  { src: "/con4.jpg", tag: "Container Camp 4", cat: "container" },
-  { src: "/con5.jpg", tag: "Container Camp 5", cat: "container" },
-  { src: "/con6.jpg", tag: "Container Camp 6", cat: "container" },
+  { src: "/con1.jpg", tag: "Drilling Camps", cat: "drilling" },
+  { src: "/con2.jpg", tag: "", cat: "" },
+  { src: "/con3.jpg", tag: "", cat: "" },
+  { src: "/con4.jpg", tag: "Container Camp", cat: "container" },
+  { src: "/con5.jpg", tag: "", cat: "" },
+  { src: "/con6.jpg", tag: "", cat: "" },
   { src: "/res1.jpg", tag: "Residential Compounds", cat: "housing" },
   { src: "/res2.jpg", tag: "Residential home", cat: "housing" },
   { src: "/res3.jpg", tag: "North Dakota Residential Home", cat: "housing" },
@@ -16,10 +17,19 @@ const galleryItems = [
   { src: "/mod1.jpg", tag: "Modular hospital", cat: "modular" },
   { src: "/drill1.jpg", tag: "Drilling Camps", cat: "drilling" },
   { src: "/op1.jpg", tag: "Permanent operational bases Africa", cat: "operational" },
+  { src: "/70y.jpg", tag: "Base Camp", cat: "operational" },
+  { src: "/a1.png", tag: "Archive", cat: "archive" },
+  { src: "/a2.png", tag: "Archive", cat: "archive" },
+  { src: "/a3.png", tag: "Archive", cat: "archive" },
+  { src: "/a4.png", tag: "Archive", cat: "archive" },
+  { src: "/a5.png", tag: "Archive", cat: "archive" },
+  { src: "/a6.png", tag: "Archive", cat: "archive" },
+  { src: "/a7.png", tag: "Archive", cat: "archive" },
 ];
 
 export default function GalleryClient() {
-  const [filter, setFilter] = useState("all");
+  const searchParams = useSearchParams();
+  const [filter, setFilter] = useState(searchParams.get("filter") || "all");
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -71,7 +81,7 @@ export default function GalleryClient() {
           <div className="hero-right">
             <p className="hero-desc">Comprehensive start-to-finish project planning captured in full. From designing and constructing drill camps to support equipment and site development — every project, every terrain.</p>
             <div className="filter-bar">
-              {["all", "container", "housing", "modular", "drilling", "operational"].map((f) => (
+              {["all", "container", "housing", "modular", "drilling", "operational", "archive"].map((f) => (
                 <button
                   key={f}
                   className={`filter-btn ${filter === f ? "active" : ""}`}
