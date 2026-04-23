@@ -1,6 +1,7 @@
 import "./gallery.css";
 import GalleryClient from "./GalleryClient";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export const metadata = {
   title: "Gallery — Porta-Kamp",
@@ -10,7 +11,9 @@ export const metadata = {
 export default function GalleryPage() {
   return (
     <>
-      <GalleryClient />
+      <Suspense>
+        <GalleryClient />
+      </Suspense>
 
       {/* CTA */}
       <section className="gallery-cta reveal">
