@@ -27,7 +27,7 @@ export default function AboutPage() {
       <section className="intro-split">
         <div className="intro-text reveal">
           <p className="section-label">Who we are</p>
-          <h2 className="intro-heading">The original<br />Flat Pack<br />company</h2>
+          <h2 className="intro-heading">First Generation <br />Portakamp</h2>
           <p className="intro-body">
             Porta-Kamp proudly celebrates its 70th Anniversary as a trailblazer in the export housing industry, pioneering the revolutionary &quot;Knock-Down&quot; modular building — now famously known as the Flat Pack. Created in the USA, this innovation became a global benchmark for prefabricated structures.
           </p>
@@ -38,8 +38,8 @@ export default function AboutPage() {
         </div>
         <div className="intro-img-panel reveal stagger-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="https://portakamp.com/wp-content/uploads/2025/01/3051304-Image-1.png" alt="Original Porta-Kamp flat pack structure" />
-          <div className="intro-img-overlay">The original flat pack · 1955</div>
+          <img src="/firstgeneration.jpg" alt="First Generation Portakamp" />
+          <div className="intro-img-overlay">First Generation Portakamp · 1955</div>
         </div>
       </section>
 

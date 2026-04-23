@@ -18,8 +18,7 @@ export default function Home() {
         <div className="hero-content">
           <p className="hero-eyebrow">Est. 1955 · Houston, TX</p>
           <h1 className="hero-title">
-            PORTA-KAMP<br />
-            <em>HOUSTON</em>
+            <span>PORTA-KAMP</span><br className="hero-br" /> <em>HOUSTON</em>
           </h1>
           <p className="hero-sub">
             70 years pioneering modular and prefabricated structures worldwide.
@@ -96,7 +95,7 @@ export default function Home() {
           <div className="about-img-frame">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://portakamp.com/wp-content/uploads/2025/01/TOF00007-e1738254300358.jpg"
+              src="/70y.jpg"
               alt="Porta-Kamp base camp installation"
             />
             <div className="about-img-caption">
@@ -113,11 +112,11 @@ export default function Home() {
           <div className="tradition-img-frame">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://portakamp.com/wp-content/uploads/2025/01/TOF00023.jpg"
+              src="/bontradition.jpg"
               alt="Complete Base Camp Installation — aerial view"
             />
             <div className="tradition-img-caption">
-              *Complete Base Camp Installation
+              *Complete Town home Installation
             </div>
           </div>
           <div className="tradition-accent-box"></div>
@@ -156,11 +155,11 @@ export default function Home() {
         </div>
         <div className="gallery-grid reveal stagger-2">
           {[
-            { src: "https://portakamp.com/wp-content/uploads/2025/01/Prefab-1-scaled.jpg", label: "Prefab Housing Unit" },
-            { src: "https://portakamp.com/wp-content/uploads/2025/01/TOF00023.jpg", label: "Camp Installation" },
-            { src: "https://portakamp.com/wp-content/uploads/2025/01/TOF00009_6.jpg", label: "Modular Structure" },
-            { src: "https://portakamp.com/wp-content/uploads/2025/01/IMG_1310-1-scaled.jpg", label: "Field Deployment" },
-            { src: "https://portakamp.com/wp-content/uploads/2025/01/IMAG4253.jpg", label: "Base Complex" },
+            { src: "/con1.jpg", label: "Container Camp" },
+            { src: "/res1.jpg", label: "Residential Compounds" },
+            { src: "/mod1.jpg", label: "Modular Hospital" },
+            { src: "/drill1.jpg", label: "Drilling Camps" },
+            { src: "/op1.jpg", label: "Operational Bases" },
           ].map((item) => (
             <div key={item.label} className="gallery-item">
               {/* eslint-disable-next-line @next/next/no-img-element */}

@@ -2,24 +2,21 @@
 import { useState, useCallback, useEffect } from "react";
 
 const galleryItems = [
-  { src: "3051304-Image-1.png", tag: "Drill Camp · Flat Pack", cat: "camps" },
-  { src: "PF-Home-CIMG3183-11.jpg", tag: "Housing Complex", cat: "housing" },
-  { src: "North-Dakota-PFIMG_8766-1.jpg", tag: "North Dakota · Community", cat: "housing" },
-  { src: "CIMG2733.jpg", tag: "Modular Structure", cat: "modular" },
-  { src: "CIMG0567.jpg", tag: "Drill Camp · Installation", cat: "camps" },
-  { src: "Container-Base-Camp-Night-Photo1-1-scaled.jpg", tag: "Container Base Camp · Night", cat: "camps" },
-  { src: "St-Crois-Image-2-1.png", tag: "St. Croix · Modular", cat: "modular" },
-  { src: "3051306-Image-1.png", tag: "Archive", cat: "archive" },
-  { src: "030513111-Image-e1736469560494.png", tag: "Archive · Historical", cat: "archive" },
-  { src: "St-Crois-Image-2.png", tag: "St. Croix · Installation", cat: "modular" },
-  { src: "TOF00009_6.jpg", tag: "Base Camp · Operations", cat: "camps" },
-  { src: "image001-1.png", tag: "Modular · Office Complex", cat: "modular" },
-  { src: "TOF00023.jpg", tag: "Drill Camp · Aerial", cat: "camps" },
-  { src: "IMAG4253.jpg", tag: "Workforce Accommodation", cat: "housing" },
-  { src: "IMG_1310-1-scaled.jpg", tag: "Housing Development", cat: "housing" },
+  { src: "/con1.jpg", tag: "Container Camp 1", cat: "container" },
+  { src: "/con2.jpg", tag: "Container Camp 2", cat: "container" },
+  { src: "/con3.jpg", tag: "Container Camp 3", cat: "container" },
+  { src: "/con4.jpg", tag: "Container Camp 4", cat: "container" },
+  { src: "/con5.jpg", tag: "Container Camp 5", cat: "container" },
+  { src: "/con6.jpg", tag: "Container Camp 6", cat: "container" },
+  { src: "/res1.jpg", tag: "Residential Compounds", cat: "housing" },
+  { src: "/res2.jpg", tag: "Residential home", cat: "housing" },
+  { src: "/res3.jpg", tag: "North Dakota Residential Home", cat: "housing" },
+  { src: "/res4.jpg", tag: "North Dakota Residential Home", cat: "housing" },
+  { src: "/res5.jpg", tag: "Town home", cat: "housing" },
+  { src: "/mod1.jpg", tag: "Modular hospital", cat: "modular" },
+  { src: "/drill1.jpg", tag: "Drilling Camps", cat: "drilling" },
+  { src: "/op1.jpg", tag: "Permanent operational bases Africa", cat: "operational" },
 ];
-
-const BASE = "https://portakamp.com/wp-content/uploads/2025/01/";
 
 export default function GalleryClient() {
   const [filter, setFilter] = useState("all");
@@ -74,13 +71,13 @@ export default function GalleryClient() {
           <div className="hero-right">
             <p className="hero-desc">Comprehensive start-to-finish project planning captured in full. From designing and constructing drill camps to support equipment and site development — every project, every terrain.</p>
             <div className="filter-bar">
-              {["all", "camps", "modular", "housing", "archive"].map((f) => (
+              {["all", "container", "housing", "modular", "drilling", "operational"].map((f) => (
                 <button
                   key={f}
                   className={`filter-btn ${filter === f ? "active" : ""}`}
                   onClick={() => setFilter(f)}
                 >
-                  {f === "all" ? "All Projects" : f === "camps" ? "Drill Camps" : f.charAt(0).toUpperCase() + f.slice(1)}
+                  {f === "all" ? "All Projects" : f === "camps" ? "Drill Camps" : f === "container" ? "Container Camps" : f === "drilling" ? "Drilling Camps" : f === "operational" ? "Operational Bases" : f.charAt(0).toUpperCase() + f.slice(1)}
                 </button>
               ))}
             </div>
@@ -110,7 +107,7 @@ export default function GalleryClient() {
           {filtered.map((item, i) => (
             <div key={`${item.src}-${i}`} className="masonry-item" onClick={() => openLightbox(galleryItems.indexOf(item))}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`${BASE}${item.src}`} alt={item.tag} loading="lazy" />
+              <img src={item.src} alt={item.tag} loading="lazy" />
               <div className="overlay">
                 <div className="overlay-inner">
                   <span className="overlay-tag">{item.tag}</span>
@@ -128,7 +125,7 @@ export default function GalleryClient() {
         <button className="lightbox-nav lightbox-prev" onClick={prevImg}>‹</button>
         <div className="lightbox-inner">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="lightbox-img" src={`${BASE}${galleryItems[currentIndex].src}`} alt={galleryItems[currentIndex].tag} />
+          <img className="lightbox-img" src={galleryItems[currentIndex].src} alt={galleryItems[currentIndex].tag} />
         </div>
         <button className="lightbox-nav lightbox-next" onClick={nextImg}>›</button>
         <div className="lightbox-counter">

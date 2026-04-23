@@ -39,8 +39,8 @@
 }
 
 .legal-inner p {
-  font-size: 0.95rem;
-  font-weight: 300;
+  font-size: 1.1rem;
+  font-weight: 500;
   color: rgba(30,58,28,0.75);
   line-height: 1.85;
   margin-bottom: 1.2rem;
@@ -68,8 +68,8 @@
 }
 
 .legal-inner ul li {
-  font-size: 0.9rem;
-  font-weight: 300;
+  font-size: 1.05rem;
+  font-weight: 500;
   color: rgba(30,58,28,0.75);
   line-height: 1.7;
   padding: 0.8rem 1.2rem;

@@ -11,7 +11,7 @@
 }
 .gallery-hero .hero-right { animation: fadeUp 0.8s 0.3s ease both; }
 .hero-desc {
-  font-size: 1rem; font-weight: 300;
+  font-size: 1.15rem; font-weight: 500;
   color: rgba(255,255,255,0.6); line-height: 1.85;
   max-width: 460px; margin-bottom: 2.5rem;
 }
@@ -156,7 +156,7 @@
   color: white; line-height: 0.95; position: relative; z-index: 1;
 }
 .gallery-cta .cta-sub {
-  font-size: 0.95rem; font-weight: 300; color: rgba(255,255,255,0.8);
+  font-size: 1.1rem; font-weight: 500; color: rgba(255,255,255,0.8);
   line-height: 1.75; margin-top: 1.2rem; max-width: 500px; position: relative; z-index: 1;
 }
 

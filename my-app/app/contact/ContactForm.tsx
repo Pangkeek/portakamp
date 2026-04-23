@@ -15,6 +15,8 @@ export default function ContactForm() {
   const [message, setMessage] = useState("");
   const [activeTags, setActiveTags] = useState<string[]>([]);
   const [showSuccess, setShowSuccess] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
   const [errors, setErrors] = useState<{ name?: boolean; email?: boolean }>({});
 
   const toggleTag = (tag: string) => {
@@ -23,7 +25,8 @@ export default function ContactForm() {
     );
   };
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
+    setSubmitError("");
     const newErrors: { name?: boolean; email?: boolean } = {};
     if (!name) newErrors.name = true;
     if (!email) newErrors.email = true;
@@ -32,9 +35,31 @@ export default function ContactForm() {
       return;
     }
     setErrors({});
-    setShowSuccess(true);
-    setName(""); setEmail(""); setPhone(""); setOrg(""); setMessage("");
-    setActiveTags([]);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, phone, org, message, activeTags }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      setShowSuccess(true);
+      setName(""); setEmail(""); setPhone(""); setOrg(""); setMessage("");
+      setActiveTags([]);
+      
+      // Hide success message after 5 seconds
+      setTimeout(() => setShowSuccess(false), 5000);
+    } catch (err) {
+      console.error(err);
+      setSubmitError("There was an error sending your message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -86,11 +111,17 @@ export default function ContactForm() {
         </div>
 
         <div className="submit-row">
-          <button className="submit-btn" onClick={handleSubmit}>
-            Submit <span className="arrow">→</span>
+          <button className="submit-btn" onClick={handleSubmit} disabled={isSubmitting}>
+            {isSubmitting ? "Sending..." : "Submit"} <span className="arrow">→</span>
           </button>
           <p className="submit-note">We typically respond<br />within one business day.</p>
         </div>
+
+        {submitError && (
+          <div style={{ color: "#e05050", fontSize: "0.9rem", marginTop: "1rem" }}>
+            {submitError}
+          </div>
+        )}
 
         <div className={`success-msg ${showSuccess ? "show" : ""}`}>
           ✓ &nbsp; Message received — we&apos;ll be in touch shortly.
